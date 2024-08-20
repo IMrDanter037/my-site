@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Возможности нейросетей</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Стили для горизонтального меню */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Стили для основного контента */
+        main {
+            max-width: 800px;
+            margin: 80px auto 0;
+            padding: 40px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #333;
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        section h3 {
+            color: #444;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        section p {
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* Стили для изображений */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 360px;
+            height: 360px;
+            margin: 0 10px;
+        }
+
+        /* Стили для аудио */
+        .audio-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Стили для подвала */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Стили для кнопки помощи */
+        .help-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .help-button:hover {
+            background-color: #218838;
+        }
+
+        /* Стили для формы */
+        .form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .form-container button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
+        /* Стили для кнопки закрытия формы */
+        .close-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .close-button:hover {
+            background-color: #c82333;
+        }
+
+        /* Стили для сообщения об успешной отправке */
+        .success-message {
+            display: none;
+            color: #28a745;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#features">Возможности</a></li>
+            <li><a href="#tools">Инструменты</a></li>
+            <li><a href="#author">Об авторе</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <p>Добро пожаловать на сайт о нейросетях! Здесь вы узнаете, на что способны эти удивительные технологии будущего!</p>
+        </section>
+
+        <section id="features">
+            <h2>Возможности нейросетей</h2>
+            <p>Нейросети — это класс алгоритмов машинного обучения, вдохновленный структурой и функцией человеческого мозга. Они состоят из множества взаимосвязанных узлов (нейронов), которые обрабатывают информацию и обучаются на основе данных. Нейросети способны распознавать паттерны, классифицировать данные и делать предсказания, что делает их полезными в различных областях, таких как:</p>
+            <ul>
+                <li>Обработка изображений и видео</li>
+                <li>Обработка естественного языка</li>
+                <li>Рекомендательные системы</li>
+                <li>Игры и симуляции</li>
+                <li>Медицинская диагностика</li>
+            </ul>
+
+            <h2>Что умеют нейросети?</h2>
+            <h3>Генерация текста</h3>
+            <p>Нейросети могут генерировать осмысленный текст на основе заданного образца или темы.</p>
+            <p>Прочитайте рассказ, созданный нейросетью:</p>
+
+            <div style="position:relative;padding-top:max(60%,324px);width:100%;height:0;">
+                <iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/cnynp/cpbw/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+            </div>
+
+            <h3>Создание изображений</h3>
+            <p>С помощью нейросетей можно создавать уникальные изображения по текстовому описанию.</p>
+
+            <div class="image-container">
+                <img src="image1.jpg" alt="Изображение 1">
+                <img src="image2.jpg" alt="Изображение 2">
+            </div>
+
+            <h3>Создание музыки</h3>
+            <p>Нейросети способны сочинять музыку в различных жанрах, от классической до электронной.</p>
+            <p>Послушайте песню, созданную нейросетью:</p>
+
+            <div class="audio-container">
+                <audio controls>
+                    <source src="song.mp3" type="audio/mpeg">
+                    Ваш браузер не поддерживает воспроизведение аудио.
+                </audio>
+            </div>
+        </section>
+
+        <section id="tools">
+            <h2>Инструменты и ресурсы</h2>
+            <ul>
+                <li><a href="https://www.perplexity.ai">Perplexity AI</a> - поисковый движок на основе ИИ</li>
+                <li><a href="https://www.kandinsky.io">Kandinsky</a> - генерация изображений по описанию</li>
+                <li><a href="https://www.suno.ai">Suno.ai</a> - генерация текста на основе ИИ</li>
+                <li><a href="https://gpt.yandex.ru">Яндекс GPT</a> - генерация текста на русском языке</li>
+                <li><a href="https://fliphtml5.com">fliphtml5</a> - создание интерактивных публикаций</li>
+                <li><a href="https://clideo.com">Clideo</a> - онлайн-инструменты для работы с медиафайлами</li>
+            </ul>
+        </section>
+
+        <section id="author">
+            <h2>Об авторе</h2>
+            <p>Хлопунов Александр — автор и разработчик данного сайта, посвященного нейросетям и их возможностям. С интересом изучает современные технологии и их влияние на различные сферы жизни. Александр имеет опыт работы в области информационных технологий и стремится делиться своими знаниями с широкой аудиторией.</p>
+        </section>
+    </main>
+
+    <button class="help-button" title="Помощь?" onclick="showForm()">?</button>
+
+    <div class="form-overlay" id="form-overlay">
+        <div class="form-container">
+            <h2>Задайте вопрос автору</h2>
+            <form id="question-form" onsubmit="return submitForm(event)">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="question">Вопрос:</label>
+                <textarea id="question" name="question" rows="5" required></textarea>
+
+                <button type="submit">Отправить</button>
+            </form>
+            <button class="close-button" onclick="hideForm()">Закрыть</button>
+            <div class="success-message" id="success-message">Спасибо за вопрос!</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 </p>
+    </footer>
+
+    <script>
+        function showForm() {
+            document.getElementById("form-overlay").style.display = "flex";
+        }
+
+        function hideForm() {
+            document.getElementById("form-overlay").style.display =
